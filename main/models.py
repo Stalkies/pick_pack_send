@@ -8,16 +8,19 @@ class Client(models.Model):
     class Meta:
         verbose_name_plural = "Клиент"
 class Cart(models.Model):
-    good_id = models.BigIntegerField('Товары', max_length=24)
-    client_id = models.BigIntegerField('Клиент', max_length=10)
+    good_id = models.IntegerField('Товары')
+    client_id = models.IntegerField('Клиент')
     class Meta:
         verbose_name_plural = "Корзина"
 
 class Good(models.Model):
     title = models.CharField('Название товара', max_length=256)
-    description = models.TextField('Описание товара', max_length=4069)
+    price = models.IntegerField('Цена Товара')
+    image = models.ImageField(default='no_image.jpg', upload_to='product_image')
     class Meta:
         verbose_name_plural = "Товары"
+    def __str__(self):
+        return f'{self.title}'
 
 class Photo(models.Model):
     url = models.CharField(max_length=512)

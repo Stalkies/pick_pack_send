@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% load static %}
     <meta charset="UTF-8">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +18,8 @@
 			<input type="search" name="s" autocomplete="off" placeholder="Search">
 
 		</form>
-		<div class="user_logo"><img src="{%static "media/user_logo.svg"%}"></div>
-		<div class="favorites"><img src="{%static "media/favorites.svg"%}"></div>
+		<div class="user_logo"><a href="/admin"><img src="{%static "media/user_logo.svg"%}"></a></div>
+		<div class="favorites" id="favorites"><img src="{%static "media/favorites.svg"%}"></div>
 		<div class="cart"><img src="{%static "media/cart.svg"%}"></div>
 	</header>
 	<div class="flex_proposal">
@@ -37,13 +37,17 @@
 		<span>BESTSELLERS</span>
 	</div>
 	<div class="wrapper_items">
-		<div class="item_red item_1"><img src="{% static "media/vapepic.svg" %}"><div class="info">
+		{% for post in pr %}
+		<a href="#" class="item_red item_1" id="card"><img src="{{ post.image.url }}"><div class="info">
 			<span class="title">
-				VOOPO DRAG 2
+				{{ post.title }}
 			</span>
 			<span class="price">
-				$1000
+				${{ post.price }}
 			</span>
-		</div></div>
+		</div></a>
+		{% endfor %}
+	</div>
+	<script src="{% static 'script.js' %}"></script>
 </body>
 </html>

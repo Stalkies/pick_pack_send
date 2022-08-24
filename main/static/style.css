@@ -51,6 +51,7 @@ form{
 	margin-top: 28px;
 	min-width: 100vh;
 	align-items: center;
+	margin-bottom: 0;
 	justify-content: center;
 	gap: 15px;
 }
@@ -67,8 +68,10 @@ form{
 	line-height: 54px;
 	display: flex;
 	gap:164px;
+	border-radius: 0px 20px 20px 0px;
 	color: #FFFFFF;
 }	
+
 .liquids{
 	height: 133px;
 	background: #FF9000;
@@ -81,11 +84,12 @@ form{
 	font-style: normal;
 	font-weight: 600;
 	font-size: 40px;
+	border-radius: 20px 0px 0px 20px;
 	line-height: 54px;
 	color: #000000;
 }
 .wrapper{
-	margin-top: 28px;
+	margin-top: 0px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -116,12 +120,13 @@ form{
 	min-width: 100vh;
 	min-height: 313px;
 }
-.wrapper_items div{
+.wrapper_items a.item_red{
 	background: #ffdede;
 	width: 20%;
 	height: 313px;
 	border-radius: 20px;
 }
+
 .item_red img{
 	width: 100%;
 	display: flex;
@@ -132,14 +137,14 @@ form{
 }
 .info{
 	min-width: 100%;
-	background: green;
-	max-height: 100px;
+	min-height: 100px;
 	border-radius: 0px 0px 20px 20px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 }
+
 .info span{
 	min-width: 100%;
 	text-align: center;
